@@ -14,126 +14,108 @@
 \textit{Computational resolution limits for super-resolution of positive sources}
 \end{center}
 
-This manuscript studies the super-resolution of positive point sources from noisy band-limited Fourier data.
-More precisely, it analyzes computational resolution limits for two tasks:
-detecting the correct number of sources and stably recovering their supports.
-The authors obtain one-dimensional lower bounds in terms of the cutoff frequency,
-the signal-to-noise ratio, and minimal separation, and then extend the theory to multi-dimensional settings.
-The paper also includes numerical experiments exhibiting the predicted phase-transition behavior and discusses
-algorithmic implications for sparsity-promoting reconstruction.
+This paper studies computational resolution limits for super-resolution of positive sources from noisy band-limited Fourier data.
+The main quantitative question is how small the minimum separation may be, as a function of $\Omega$, $\sigma$, $m_{\min}$, and $n$,
+while still allowing stable detection of the correct number of sources or stable recovery of their locations.
+In one dimension, the authors define the corresponding resolution limits for number detection and support recovery,
+prove explicit upper and lower bounds, and then extend the theory to higher dimensions.
 
-Super-resolution, line spectral estimation,
-and deconvolution of point sources are central problems in inverse problems and
-computational imaging, and positivity is a natural and practically relevant prior in many imaging applications.
-The manuscript is therefore of interest to a substantial audience.
-The paper addresses a computationally meaningful notion of resolution limit,
-proves explicit quantitative bounds, and connects the theory to concrete reconstruction procedures and numerical phase transitions.
+In my view, the main contribution of the paper is the lower bound for the
+number-detection problem in the positive-source case, namely the lower bound on the minimum
+separation required to detect the correct number of sources.
+More precisely, Theorem~2.2 constructs an $n$-point positive measure and an $(n-1)$-point positive measure whose
+Fourier data differ by less than $2\sigma$ and whose minimum separation is
+\[
+\frac{2e^{-1}}{\Omega}\left(\frac{2\sigma}{m_{\min}}\right)^{\!1/(2n-2)}.
+\]
+This is the theorem that, in my opinion, carries the main novelty of the paper.
+The result is useful because it shows that positivity does not improve the asymptotic SRF--SNR
+law for number detection: the exponent remains the same as in the general-source case.
+What positivity does provide is better constants.
+While it may be possible to adapt previously published techniques
+to the postive case, explicit constants of this quality are not
+easily attained.
 
-In my view, the strongest contribution of the paper is the lower bound for the \emph{number-detection}
-resolution limit in the positive-source setting.
-This seems to be the main new result relative to the authors' earlier works on general sources.
-The lower bound present the same asymptotic order as the general sources (not necessarily positive) upper bound,
-and is presented with explicit and fairly sharp constants.
-Conceptually, the result is useful because it shows that positivity does \emph{not}
-improve the asymptotic relationship between the super-resolution factor and the signal-to-noise ratio:
-the exponents remain the same as in the general-source case.
-At the same time, positivity does allow one to derive better constants.
+The support-recovery lower bound, the multidimensional extension, the instability examples,
+and the numerical phase-transition sections are useful complements.
+They strengthen the paper and make the picture more complete,
+yet the key new point is still the positive-source lower bound for number detection.
 
-The paper contains several additional useful contributions.
-The support-recovery lower bound and instability constructions
-help show that the general upper bounds are optimal in order for positive sources.
-The multi-dimensional extension is natural and valuable.
-I also found the observation in Section 4 interesting:
-positivity might damage resolution, for two sources with different
-phases the resolution limit can in fact be better than in the positive case.
+At the level of proof, the lower-bound argument is based on the framework developed earlier in [32].
+The main ingredients are the same: one constructs an underdetermined Vandermonde system,
+exploits vanishing moments, controls the coefficients via inverse-Vandermonde/Lagrange formulas,
+and estimates the Fourier tail using factorial/Stirling bounds.
+The new ingredient is the additional analysis needed to enforce positivity,
+especially the sign pattern that allows the null vector to be split into two positive measures.
+I therefore view the argument as a nontrivial positivity-adapted refinement of [32],
+rather than as a completely different method.
+This does not diminish the value of the result, but it should be described accurately.
 
-My main reservation concerns the way the novelty is currently described relative to the previous paper [32].
-After comparing the arguments, I do not think the lower-bound proof here should be presented as a wholly new methodology.
-The proof architecture is largely the same as in [32]: an underdetermined Vandermonde-type system
-is constructed, low-order moments are made to cancel, the coefficients are
-controlled via inverse-Vandermonde/Lagrange-type formulas, and the Fourier
-tail is estimated using factorial and Stirling-type bounds. What is new and
-important here is the additional analysis needed to enforce \emph{positivity},
-especially the sign analysis that allows the null vector to be split into two positive measures,
-together with some extra combinatorial estimates in the more delicate constructions.
-In other words, I view the argument as a meaningful positivity-adapted refinement of the authors'
-earlier lower-bound technique, rather than a completely different technique.
+The paper is generally clear and well organized.
+My main recommendation is that the authors should
+state much more explicitly that the principal novelty,
+relative to the previous papers, is the lower bound for number detection in the positive case.
 
-The manuscript is otherwise nicely written and generally clear.
-The results are well organized, the main theorems are easy to locate,
-and the numerical sections help illustrate the theory. For these reasons,
-my recommendation is: Accept subject to minor revisions.
+\textbf{Recommendation:} \emph{Accept subject to minor revisions.}
 
 \textbf{Comments to the authors}
 
 \begin{enumerate}[leftmargin=2em]
-\item \textbf{Clarify the main novelty more explicitly.}
-In my opinion, the introduction should say more clearly that the main new one-dimensional
-contribution is the lower bound for the number-detection problem in the case of positive sources.
-At present, this point is somewhat diluted by the broader presentation.
-It would help readers if Section~1.2 stated explicitly which upper bounds are
-imported from previous work and which lower bounds are new here.
+\item \textbf{State the main novelty more clearly.}
+In my opinion, the introduction and Section~1.2 should say explicitly that the principal new result is the lower bound
+for the number-detection problem for positive sources.
+At present, the paper presents a broader list of contributions,
+but the real novelty relative to the earlier papers is more specific.
 
-\item \textbf{Clarify the relation to the earlier general-source lower bounds.}
-It would be very helpful to state explicitly,
-at least in one dimension, the corresponding lower bounds from [32] for the general (not necessarily positive) case,
-and then compare them with the present positive-source bounds.
-The asymptotic orders are the same, whereas the constants appear to improve
-in the positive setting; in one dimension, the gain seems to be noticeable
-(roughly a factor of 4--6 for number detection and 7--8 for support recovery).
-This comparison would make the contribution of the present paper much easier to assess.
+\item \textbf{Compare directly with the general-source lower bounds from [32].}
+It would be helpful to state the corresponding one-dimensional lower bounds from [32]
+for general (not necessarily positive) sources and compare them explicitly with the present positive-source bounds.
+The asymptotic exponents are the same, while the constants are better in the positive case.
+A short direct comparison would make the contribution much easier to assess.
 
-\item \textbf{Moderate the description of the proof method.} I suggest revising the language around ``our new technique''
-and instead describing the proof more precisely as an adaptation of the
-lower-bound construction from [32] to the positive-source setting.
-The main added ingredient, as I understand it, is the sign analysis ensuring positivity of the constructed measures.
-Framing the contribution this way would be both accurate and still favorable to the paper.
-
-\item \textbf{Express the main bounds also in SNR/SRF form.} Several results would be easier to compare with previous
-work if they were rewritten in terms of the super-resolution factor and the signal-to-noise ratio.
-For example, the number-detection threshold may be summarized in the form
+\item \textbf{Rewrite the main bounds also in SRF/SNR form.}
+For comparison with previous super-resolution results, it would be useful to restate the one-dimensional bounds in the form
 \[
-\mathrm{SNR} \gtrsim (C\,\mathrm{SRF})^{2n-2},
+\mathrm{SNR} \gtrsim (C\,\mathrm{SRF})^{2n-2}
 \]
-and the support-recovery threshold in the form
+for number detection and
 \[
-\mathrm{SNR} \gtrsim (C\,\mathrm{SRF})^{2n-1}.
+\mathrm{SNR} \gtrsim (C\,\mathrm{SRF})^{2n-1}
 \]
-A short remark of this kind would improve readability and emphasize the scale-invariant content of the results.
+for stable support recovery.
+This may make the fact that the problem is essentially scale-invariant in $\Omega$ and $\Delta$
+as long as the multiplication remains the same, more transparent.
 
-\item \textbf{Please qualify Remark~2.2.} As written, the statement that the present estimates ``improve''
-those of [32] could be read as suggesting an improved asymptotic rate.
-My understanding is that the improvement is at the level of constants (and of adapting the theory to positive sources),
-not at the level of the exponents. I suggest making this distinction explicit.
+\item \textbf{Describe the proof method more accurately relative to [32].}
+I suggest moderating the language around ``our new technique''.
+The lower-bound construction is, in my reading, built on the framework of [32],
+with the main new step being the analysis that enforces positivity.
+I would recommend saying this explicitly.
 
-\item \textbf{A useful practical corollary could be stated after Theorem~2.3.}
-By combining the separation condition with the pointwise localization estimate,
-one can derive a simple bound showing that the recovered locations remain within a
-fixed fraction of the minimum separation distance.
-Even a brief remark of this type would help readers interpret the meaning of the theorem in concrete terms.
+\item \textbf{Sharpen the literature review slightly.}
+The discussion of the ``theoretical possibility'' of super-resolution for positive
+sources could be positioned more carefully relative to classical Prony-type identifiability
+and related exact-recovery statements when enough measurements are available.
+I do not think this requires a large rewrite, but one clarifying sentence would improve the historical framing.
 
-\item \textbf{A few small exposition improvements would help.}
-\begin{enumerate}[label=(\alph*), leftmargin=2em]
-\item A short note clarifying that the results are not essentially tied to the specific interval $I(n,\Omega)$,
-but can be recentered and viewed on the real line, would be useful.
-\item It would be good to standardize the notation for norms and absolute values throughout the paper.
-\item Where appropriate, bibliographic entries and cross-references could be modernized slightly
-(for example, by using hyperlinks in the final typeset version).
+\item \textbf{Add a short remark about the real-line formulation.}
+The one-dimensional results are not essentially tied to the particular interval $I(n,\Omega)$;
+they can be recentered and viewed on the real line.
+A brief remark to this effect would improve exposition.
+
+\item \textbf{Add a practical remark after Theorem~2.3.}
+After Theorem~2.3, it would be helpful to record explicitly that combining the separation
+condition with the pointwise localization estimate yields an error bound showing that the
+recovered locations remain within a fixed fraction of the minimum separation.
+This is a useful practical consequence of the theorem.
+
+\item \textbf{Minor presentation issues.}
+I support the smaller comments marked in the annotated PDF, including writing the main thresholds in SRF form,
+using standard notation consistently, and replacing some references by hyperlinks/cross-references where appropriate.
 \end{enumerate}
 
-\item \textbf{The discussion of previous literature on positivity could be sharpened slightly.}
-I think the current discussion is already informative,
-but a somewhat clearer separation between earlier results on the possibility
-of super-resolution for positive sources, earlier algorithmic stability results,
-and the present computational-resolution-limit viewpoint would improve the historical narrative.
-In particular, it may be worth clarifying how this viewpoint relates to classical identifiability
-or Prony-type arguments when sufficiently many measurements are available,
-so that the reader can better distinguish the present stability-and-resolution-limit
-perspective from earlier exact-recovery perspectives.
-\end{enumerate}
-
-Overall, I found the paper to be a useful and clearly written contribution.
-The main new result is worthwhile, the constants are explicit and interesting,
-and the manuscript is a good fit for the journal once the above points are addressed.
+Overall, I think this is a good paper.
+The main result is useful, the constants are explicit and reasonably sharp,
+and the manuscript is suitable for publication once the above expository revisions are made.
 
 \end{document}

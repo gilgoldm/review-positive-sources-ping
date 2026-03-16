@@ -14,108 +14,137 @@
 \textit{Computational resolution limits for super-resolution of positive sources}
 \end{center}
 
-This paper studies computational resolution limits for super-resolution of positive sources from noisy band-limited Fourier data.
-The main quantitative question is how small the minimum separation may be, as a function of $\Omega$, $\sigma$, $m_{\min}$, and $n$,
-while still allowing stable detection of the correct number of sources or stable recovery of their locations.
-In one dimension, the authors define the corresponding resolution limits for number detection and support recovery,
-prove explicit upper and lower bounds, and then extend the theory to higher dimensions.
+This paper studies computational resolution limits for super-resolution of positive sources from
+noisy band-limited Fourier data. The central quantitative question is how small the minimum
+separation may be, as a function of the cutoff frequency $\Omega$, the noise level
+$\sigma$, the minimum source amplitude $m_{\min}$, and the number of sources $n$,
+while still allowing stable detection of the correct number of sources or stable recovery
+of their locations. In one dimension, the paper defines the corresponding
+positive-source resolution limits, proves lower bounds with explicit constants,
+and combines them with upper bounds from the authors' earlier papers. It then
+extends the analysis to higher dimensions.
 
-In my view, the main contribution of the paper is the lower bound for the
-number-detection problem in the positive-source case, namely the lower bound on the minimum
-separation required to detect the correct number of sources.
-More precisely, Theorem~2.2 constructs an $n$-point positive measure and an $(n-1)$-point positive measure whose
-Fourier data differ by less than $2\sigma$ and whose minimum separation is
+In my view, the main contribution of the paper is Theorem~2.2, namely the lower bound for the
+number-detection problem in the positive-source case. More precisely, Theorem~2.2 constructs an
+$n$-point positive measure and an $(n-1)$-point positive measure whose Fourier measurements
+differ by less than $2\sigma$ and whose minimum separation is
 \[
 \frac{2e^{-1}}{\Omega}\left(\frac{2\sigma}{m_{\min}}\right)^{\!1/(2n-2)}.
 \]
-This is the theorem that, in my opinion, carries the main novelty of the paper.
-The result is useful because it shows that positivity does not improve the asymptotic SRF--SNR
-law for number detection: the exponent remains the same as in the general-source case.
-What positivity does provide is better constants.
-While it may be possible to adapt previously published techniques
-to the postive case, explicit constants of this quality are not
-easily attained.
+This is the theorem that carries the main novelty of the paper. The result is useful because it
+shows that positivity does not improve the asymptotic SRF--SNR law for number detection: the
+exponent remains the same as in the general-source case. What positivity does provide is better
+constants. While one may be able to adapt previously published techniques to the positive case, this
+does not seem to yield explicit constants of comparable sharpness to the current work.
 
-The support-recovery lower bound, the multidimensional extension, the instability examples,
-and the numerical phase-transition sections are useful complements.
-They strengthen the paper and make the picture more complete,
-yet the key new point is still the positive-source lower bound for number detection.
+The support-recovery lower bound, the multidimensional extension, the instability examples, and
+the numerical phase-transition sections are useful complements. They strengthen the paper and make
+the overall picture more complete, but I would still regard the main new point as the
+positive-source lower bound for number detection.
 
-At the level of proof, the lower-bound argument is based on the framework developed earlier in [32].
-The main ingredients are the same: one constructs an underdetermined Vandermonde system,
+At the level of proof, the lower-bound argument is based on the framework developed earlier in
+[32]. The main ingredients are the same: one constructs an underdetermined Vandermonde system,
 exploits vanishing moments, controls the coefficients via inverse-Vandermonde/Lagrange formulas,
-and estimates the Fourier tail using factorial/Stirling bounds.
-The new ingredient is the additional analysis needed to enforce positivity,
-especially the sign pattern that allows the null vector to be split into two positive measures.
-I therefore view the argument as a nontrivial positivity-adapted refinement of [32],
-rather than as a completely different method.
-This does not diminish the value of the result, but it should be described accurately.
+and estimates the Fourier tail using factorial/Stirling bounds. The new ingredient is the
+additional analysis needed to enforce positivity, especially the sign pattern that allows the null
+vector to be split into two positive measures. I therefore view the argument as a nontrivial
+positivity-adapted refinement of [32], rather than as a completely different method. This does not
+diminish the value of the result, but it should be described accurately in the paper.
 
-The paper is generally clear and well organized.
-My main recommendation is that the authors should
-state much more explicitly that the principal novelty,
-relative to the previous papers, is the lower bound for number detection in the positive case.
+The paper is generally clear and well organized. My main recommendation is that the authors should
+state much more explicitly that the principal novelty, relative to the previous papers, is the
+lower bound for number detection in the positive case.
 
-\textbf{Recommendation:} \emph{Accept subject to minor revisions.}
+\textbf{Recommendation:} \emph{Accept subject to revision.}
 
 \textbf{Comments to the authors}
 
-\begin{enumerate}[leftmargin=2em]
-\item \textbf{State the main novelty more clearly.}
-In my opinion, the introduction and Section~1.2 should say explicitly that the principal new result is the lower bound
-for the number-detection problem for positive sources.
-At present, the paper presents a broader list of contributions,
-but the real novelty relative to the earlier papers is more specific.
+\begin{enumerate}[leftmargin=2.2em]
+\item \textbf{State the main novelty more clearly in the introduction and in Section~1.2.}
+The sentence on p.~5 beginning ``The main contribution of this paper is quantitative
+characterizations ...'' should be sharpened. In my opinion, the main new result is more specific:
+it is the lower bound for the number-detection problem for positive sources, namely
+Theorem~2.2. The one-dimensional upper bounds are taken from earlier papers of the authors, and
+the support-recovery lower bound and multidimensional extension are useful complements. I suggest
+stating this explicitly.
 
-\item \textbf{Compare directly with the general-source lower bounds from [32].}
-It would be helpful to state the corresponding one-dimensional lower bounds from [32]
-for general (not necessarily positive) sources and compare them explicitly with the present positive-source bounds.
-The asymptotic exponents are the same, while the constants are better in the positive case.
-A short direct comparison would make the contribution much easier to assess.
-
-\item \textbf{Rewrite the main bounds also in SRF/SNR form.}
-For comparison with previous super-resolution results, it would be useful to restate the one-dimensional bounds in the form
+\item \textbf{Compare the positive-source lower bounds directly with the general-source lower
+bounds from [32].} This should be done either in Section~1.2 or after the lower bounds are stated
+in Theorems~2.2 and~2.4 on pp.~8--9. A direct comparison would make the contribution
+easier to assess. In one dimension, [32] gives
 \[
-\mathrm{SNR} \gtrsim (C\,\mathrm{SRF})^{2n-2}
+D_{\mathrm{num}}>\frac{0.81\,e^{-3/2}}{\Omega}
+\left(\frac{\sigma}{m_{\min}}\right)^{1/(2n-2)},
+\qquad
+D_{\mathrm{supp}}>\frac{0.49\,e^{-3/2}}{\Omega}
+\left(\frac{\sigma}{m_{\min}}\right)^{1/(2n-1)}.
 \]
-for number detection and
+After rewriting (1.2)--(1.3) in the same normalization, the present paper gives
 \[
-\mathrm{SNR} \gtrsim (C\,\mathrm{SRF})^{2n-1}
+D_{\mathrm{num}}^{+}>\frac{2^{1+\frac{1}{2n-2}}e^{-1}}{\Omega}
+\left(\frac{\sigma}{m_{\min}}\right)^{1/(2n-2)},
+\qquad
+D_{\mathrm{supp}}^{+}>\frac{2^{1+\frac{1}{2n-1}}e^{-1}}{\Omega}
+\left(\frac{\sigma}{m_{\min}}\right)^{1/(2n-1)}.
 \]
-for stable support recovery.
-This may make the fact that the problem is essentially scale-invariant in $\Omega$ and $\Delta$
-as long as the multiplication remains the same, more transparent.
+Thus the exponents are unchanged, but the coefficients improve by the factors
+\[
+\frac{2^{1+\frac{1}{2n-2}}\sqrt e}{0.81}
+\qquad\text{and}\qquad
+\frac{2^{1+\frac{1}{2n-1}}\sqrt e}{0.49},
+\]
+respectively. Numerically, these gains range from about $4.1$ to $5.8$ for number detection and
+from about $6.7$ to $8.5$ for support recovery, depending on $n$.
 
-\item \textbf{Describe the proof method more accurately relative to [32].}
-I suggest moderating the language around ``our new technique''.
-The lower-bound construction is, in my reading, built on the framework of [32],
-with the main new step being the analysis that enforces positivity.
-I would recommend saying this explicitly.
+\item \textbf{Supplement the main one-dimensional thresholds by their SRF/SNR form.} This
+comment applies to the paragraph on p.~3 containing the quantities
+$C_{\mathrm{num}}(n,k)\Omega^{-1}(\sigma/m_{\min})^{1/(2n-2)}$ and
+$C_{\mathrm{supp}}(n,k)\Omega^{-1}(\sigma/m_{\min})^{1/(2n-1)}$, and again to the discussion
+around Theorems~2.1 and 2.3. I do not suggest replacing the present formulas. Rather, for
+comparison with earlier super-resolution results, it would be helpful to supplement them with the
+explicit statements that number detection requires
+\[
+\mathrm{SNR}\gtrsim (C\,\mathrm{SRF})^{2n-2},
+\]
+while stable support recovery requires
+\[
+\mathrm{SNR}\gtrsim (C\,\mathrm{SRF})^{2n-1}.
+\]
+This is the scale-invariant content of the bounds, and it should be made transparent.
 
-\item \textbf{Sharpen the literature review slightly.}
-The discussion of the ``theoretical possibility'' of super-resolution for positive
-sources could be positioned more carefully relative to classical Prony-type identifiability
-and related exact-recovery statements when enough measurements are available.
-I do not think this requires a large rewrite, but one clarifying sentence would improve the historical framing.
+\item \textbf{Sharpen the literature review on p.~4.} In the paragraph beginning ``To the best of
+our knowledge, the theoretical possibility of super-resolution of positive sources was first
+considered in [15] ...'', I recommend adding one sentence explaining the relation to classical
+Prony-type identifiability, namely that $n$ point sources are recoverable from $2n$ noiseless
+moments.
 
-\item \textbf{Add a short remark about the real-line formulation.}
-The one-dimensional results are not essentially tied to the particular interval $I(n,\Omega)$;
-they can be recentered and viewed on the real line.
-A brief remark to this effect would improve exposition.
+\item \textbf{Describe the lower-bound proof more accurately relative to [32].} This comment
+applies in particular to the sentence in Section~7 beginning ``Our new technique provides a
+way ...'' and to the proof discussion in Section~8. I suggest moderating this language and saying
+instead that the proof follows the [32] framework -- nullspace construction for an
+underdetermined Vandermonde system, moment cancellation, coefficient control, and tail bounds --
+with the new step being the analysis that enforces positivity. This would be more accurate.
 
-\item \textbf{Add a practical remark after Theorem~2.3.}
-After Theorem~2.3, it would be helpful to record explicitly that combining the separation
-condition with the pointwise localization estimate yields an error bound showing that the
-recovered locations remain within a fixed fraction of the minimum separation.
-This is a useful practical consequence of the theorem.
+\item \textbf{Add a remark that the one-dimensional formulation is not tied to the specific
+interval $I(n,\Omega)$.} On p.~6, after the definition of $I(n,\Omega)$, it would help to note
+that the results can be recentered and scaled, and viewed on the real line.
+The interval is a convenient normalization, not a substantive restriction.
 
-\item \textbf{Minor presentation issues.}
-I support the smaller comments marked in the annotated PDF, including writing the main thresholds in SRF form,
-using standard notation consistently, and replacing some references by hyperlinks/cross-references where appropriate.
+\item \textbf{Add a practical corollary after (2.4).} On p.~9, after the localization estimate
+(2.4), it would be useful to record the direct consequence of inequalities (2.3) and (2.4): if
+$\Delta:=\min_{p\neq j}|y_p-y_j|$, then
+\[
+|\hat y_j-y_j|\le c_n\,\Delta
+\]
+with $c_n<0.08$ for every $n\ge2$. This is a nice practical consequence of the theorem and
+should be stated explicitly.
+
+\item \textbf{Address the following concrete presentation issues.} In the notation paragraph on
+p.~7, replace the current nonstandard absolute-value/norm notation by standard $|\cdot|$ or
+$\|\cdot\|$ notation throughout. Also on p.~7, replace bare references such as
+``[30, Theorem ...]'' by explicit hyperlinks or cross-references where appropriate in the
+electronic version. Finally, where the main thresholds are stated on pp.~3, 5, 7, 8, and 9, add the
+corresponding SRF/SNR reformulation rather than leaving it implicit.
 \end{enumerate}
-
-Overall, I think this is a good paper.
-The main result is useful, the constants are explicit and reasonably sharp,
-and the manuscript is suitable for publication once the above expository revisions are made.
 
 \end{document}

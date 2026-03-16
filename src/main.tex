@@ -22,34 +22,30 @@ the signal-to-noise ratio, and minimal separation, and then extend the theory to
 The paper also includes numerical experiments exhibiting the predicted phase-transition behavior and discusses
 algorithmic implications for sparsity-promoting reconstruction.
 
-I believe that this is an important and appropriate topic for
-\textit{Mathematics of Computation}. Super-resolution, line spectral estimation,
+Super-resolution, line spectral estimation,
 and deconvolution of point sources are central problems in inverse problems and
 computational imaging, and positivity is a natural and practically relevant prior in many imaging applications.
-The manuscript is therefore of interest to a substantial audience, not merely a narrow niche.
-It also fits the scope of the journal well: the paper addresses a computationally meaningful notion of resolution limit,
+The manuscript is therefore of interest to a substantial audience.
+The paper addresses a computationally meaningful notion of resolution limit,
 proves explicit quantitative bounds, and connects the theory to concrete reconstruction procedures and numerical phase transitions.
 
 In my view, the strongest contribution of the paper is the lower bound for the \emph{number-detection}
 resolution limit in the positive-source setting.
-This seems to be the main genuinely new result relative to the authors' earlier works on general sources.
-The final lower bound is not only of the correct asymptotic order,
-but is presented with explicit and fairly sharp constants.
+This seems to be the main new result relative to the authors' earlier works on general sources.
+The lower bound present the same asymptotic order as the general sources (not necessarily positive) upper bound,
+and is presented with explicit and fairly sharp constants.
 Conceptually, the result is useful because it shows that positivity does \emph{not}
 improve the asymptotic relationship between the super-resolution factor and the signal-to-noise ratio:
 the exponents remain the same as in the general-source case.
-At the same time, positivity does allow one to derive better constants,
-which is mathematically meaningful and practically relevant.
+At the same time, positivity does allow one to derive better constants.
 
 The paper contains several additional useful contributions.
 The support-recovery lower bound and instability constructions
-help show that the upper bounds are essentially optimal in order.
+help show that the general upper bounds are optimal in order for positive sources.
 The multi-dimensional extension is natural and valuable.
 I also found the observation in Section 4 interesting:
-positivity does not necessarily help resolution, and for two sources with different
+positivity might damage resolution, for two sources with different
 phases the resolution limit can in fact be better than in the positive case.
-Finally, the link to sparsity-promoting algorithms and the numerical verification of
-phase transitions strengthen the computational relevance of the manuscript.
 
 My main reservation concerns the way the novelty is currently described relative to the previous paper [32].
 After comparing the arguments, I do not think the lower-bound proof here should be presented as a wholly new methodology.
@@ -66,11 +62,7 @@ earlier lower-bound technique, rather than a completely different technique.
 The manuscript is otherwise nicely written and generally clear.
 The results are well organized, the main theorems are easy to locate,
 and the numerical sections help illustrate the theory. For these reasons,
-I believe the paper is publishable. My recommendation is:
-
-\begin{center}
-\textbf{Accept subject to minor revisions.}
-\end{center}
+my recommendation is: Accept subject to minor revisions.
 
 \textbf{Comments to the authors}
 

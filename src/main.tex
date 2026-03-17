@@ -16,13 +16,13 @@
 
 This paper studies computational resolution limits for super-resolution of positive sources from
 noisy band-limited Fourier data. The central quantitative question is how small the minimum
-separation may be, as a function of the cutoff frequency $\Omega$, the noise level
-$\sigma$, the minimum source amplitude $m_{\min}$, and the number of sources $n$,
-while still allowing stable detection of the correct number of sources or stable recovery
-of their locations. In one dimension, the paper defines the corresponding
-positive-source resolution limits, proves lower bounds with explicit constants,
-and combines them with upper bounds from the authors' earlier papers. It then
-extends the analysis to higher dimensions.
+separation may be, as a function of the cutoff frequency $\Omega$, the noise level $\sigma$,
+the minimum source amplitude $m_{\min}$, and the number of sources $n$, while still allowing
+stable detection of the correct number of sources or stable recovery of their locations.
+In one dimension, the paper defines the corresponding positive-source resolution limits for a
+single cluster of sources, proves lower bounds with explicit constants, and combines them
+with upper bounds from the authors' earlier papers. It then extends the same clustered setting
+to higher dimensions.
 
 In my view, the main contribution of the paper is Theorem~2.2, namely the lower bound for the
 number-detection problem in the positive-source case. More precisely, Theorem~2.2 constructs an
@@ -34,8 +34,8 @@ differ by less than $2\sigma$ and whose minimum separation is
 This is the theorem that carries the main novelty of the paper. The result is useful because it
 shows that positivity does not improve the asymptotic SRF--SNR law for number detection: the
 exponent remains the same as in the general-source case. What positivity does provide is better
-constants. While one may be able to adapt previously published techniques to the positive case, this
-does not seem to yield explicit constants of comparable sharpness to the current work.
+constants. While one may be able to adapt previously published techniques to the positive case,
+this does not seem to yield explicit constants of comparable sharpness to the current work.
 
 The support-recovery lower bound, the multidimensional extension, the instability examples, and
 the numerical phase-transition sections are useful complements. They strengthen the paper and make
@@ -52,9 +52,15 @@ measures. I therefore view the argument as a nontrivial positivity-adapted refin
 rather than as a completely different method. This does not diminish the value of the result, but
 it should be described accurately in the paper.
 
-The paper is generally clear and well organized. My main recommendation is that the authors should
-state much more explicitly that the principal novelty, relative to the previous papers, is the
-lower bound for number detection in the positive case.
+I do, however, have two main reservations that should be addressed before I can recommend
+acceptance. First, the paper should state much more explicitly that the principal novelty,
+relative to the previous papers, is the lower bound for number detection in the positive case.
+Second, the geometric scope of the paper should be stated much more clearly. The introduction and
+Section~1.2 are written broadly enough that a reader could reasonably come away with the
+impression that the paper addresses positive-source super-resolution in fairly general geometry,
+whereas Section~2 explicitly says that it treats the case where the point sources are tightly
+spaced and form a single cluster, and Section~3 makes the analogous clustered assumption in the
+multi-dimensional setting.
 
 \textbf{Recommendation:} \emph{Accept subject to revision.}
 
@@ -68,6 +74,18 @@ it is the lower bound for the number-detection problem for positive sources, nam
 Theorem~2.2. The one-dimensional upper bounds are taken from earlier papers of the authors, and
 the support-recovery lower bound and multidimensional extension are useful complements. I suggest
 stating this explicitly.
+
+\item \textbf{State the single-cluster restriction much more clearly in the abstract,
+introduction, and Section~1.2.}
+On p.~6, Section~2 explicitly says that it considers the case where the point sources are tightly
+spaced and form a cluster, and then assumes $y_j\in I(n,\Omega)$. In Section~3, the
+multi-dimensional extension likewise assumes that all source locations belong to
+$B_{(n-1)\pi/(2\Omega)}^k(0)$. Thus the paper analyzes a single tight cluster, not general
+multi-cluster geometries. This restriction should be stated much earlier, ideally already in the
+abstract and introduction, especially because the literature review discusses multi-clustered
+configurations and the sentence on p.~3 saying that the earlier computational-resolution-limit
+results are generalized to positive sources currently reads more broadly than what is actually
+proved here.
 
 \item \textbf{Compare the positive-source lower bounds directly with the general-source lower
 bounds from [32].} This should be done either in Section~1.2 or after the lower bounds are stated
@@ -128,11 +146,6 @@ instead that the proof follows the [32] framework -- nullspace construction for 
 underdetermined Vandermonde system, moment cancellation, coefficient control, and bounds on the
 remainder of the power-series expansion of $F[\gamma]$ -- with the new step being the analysis
 that enforces positivity. This would be more accurate.
-
-\item \textbf{Add a remark that the one-dimensional formulation is not tied to the specific
-interval $I(n,\Omega)$.} On p.~6, after the definition of $I(n,\Omega)$, it would help to note
-that the results can be recentered and scaled, and viewed on the real line.
-The interval is a convenient normalization, not a substantive restriction.
 
 \item \textbf{Add a practical corollary after (2.4).} On p.~9, after the localization estimate
 (2.4), it would be useful to record the direct consequence of inequalities (2.3) and (2.4):
